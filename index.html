@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AASHRAY – Safe Housing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- LANDING PAGE -->
+  <section id="landing" class="page">
+    <h1>Find Safe Student Housing with Transparency</h1>
+    <button onclick="showPage('student')">I'm a Student</button>
+    <button onclick="showPage('warden')">I'm a Warden</button>
+  </section>
+
+
+  <!-- STUDENT DASHBOARD -->
+  <section id="student" class="page" style="display:none">
+
+    <h2>Student Dashboard</h2>
+
+    <!-- SAFETY + RENT -->
+    <div>
+     <div class="card">
+  <h3>Safety Score</h3>
+  <div id="safety-meter">85% Safe</div>
+</div>
+
+<div class="card">
+  <h3>Rent Status</h3>
+  <p id="rentStatus">Pending</p>
+</div>
+
+
+    <!-- SWIPE CARD -->
+    <div id="swipeCard"
+     style="width:200px;height:120px;background:#222;color:white;
+     display:flex;align-items:center;justify-content:center;
+     transition: transform 0.3s ease, opacity 0.3s ease;">
+
+     Rahul 🧹 Clean
+    </div>
+
+    <button onclick="swipe('left')">Swipe Left</button>
+    <button onclick="swipe('right')">Swipe Right</button>
+
+    <br><br>
+    <button onclick="showPage('landing')">Back</button>
+  </section>
+
+
+  <!-- WARDEN DASHBOARD -->
+  <section id="warden" class="page" style="display:none">
+
+    <h2>Warden Dashboard</h2>
+
+    <button onclick="toggleCCTV()">Toggle CCTV</button>
+    <button onclick="toggleRent()">Toggle Rent Paid</button>
+    <button onclick="runDemo()">Run Live Demo</button>
+
+    <h3 class="safety-score">85% Safe</h3>
+
+    <!-- OCCUPANCY GRID -->
+    <div style="display:flex;gap:10px;margin-top:20px;">
+      <div class="bed" onclick="toggleBed(this)" style="width:40px;height:40px;background:green;"></div>
+      <div class="bed" onclick="toggleBed(this)" style="width:40px;height:40px;background:green;"></div>
+      <div class="bed" onclick="toggleBed(this)" style="width:40px;height:40px;background:green;"></div>
+    </div>
+
+    <br>
+    <button onclick="showPage('landing')">Back</button>
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
